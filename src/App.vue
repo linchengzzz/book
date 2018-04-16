@@ -22,7 +22,7 @@
             myBody
         },
         created () {
-           window.location.hash='/home' 
+           window.location.hash='/home/com/sold' 
         },
         computed: {
 
@@ -38,6 +38,7 @@
     }
     a{
         text-decoration: none;
+        
     }
     ul,li{
         list-style: none;
