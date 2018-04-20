@@ -5,7 +5,7 @@
             <ul class="bookList">
                 <!-- <router-link v-for="(item,index) in books" :class="{display:item.display}" :to="{path:'/detail',name:'detail',paramsL:{bid:item.bookId}}" tag="li" :key="index" @mouseover="console.log(1)" @mouseout="item.display=false"> -->
                 <li v-for="(item,index) in books" :class="{display:hover==index}" :key="index" @mouseover="addClass(index)" @mouseout="removeClass">
-                    <div>
+                    <div class="book">
                         <router-link :to="{path:'/detail',name:'detail',params:{bid:item.bookId}}" tag="img" :src="item.bookCover" alt="" />
                         <el-tag type="info">
                             {{item.bookName}}
@@ -19,12 +19,10 @@
                             </template>
                         </el-tag>
                         <p>售价:{{format(item.bookPrice*item.bookSale)}}</p>
-                        <el-button type="warning" round>加入收藏</el-button>
-                        <el-button type="success" round>加入购物车</el-button>
+                        <my-button :book="item"/>
                     </div>
                 </li>
 
-                <!-- </router-link> -->
             </ul>
         </el-main>
     </div>
@@ -34,9 +32,11 @@
     import {
         getBooks,
     } from '../../api'
-    import { 
+    import {
         formatPrice
-     } from "../../common";
+    } from "../../common";
+    import myButton from '../../base/button.vue';
+
     export default {
         props: {
             index: {
@@ -103,7 +103,7 @@
             },
             format(value) {
                 return formatPrice(value);
-            },
+            }
         },
         watch: {
             index(key) {
@@ -123,7 +123,9 @@
                 }
             }
         },
-        components: {},
+        components: {
+            myButton
+        },
         computed: {}
     };
 
@@ -156,7 +158,7 @@
             height: 300px;
             overflow: hidden;
             position: relative;
-            div {
+            .book {
                 position: absolute;
                 width: 310px;
                 height: 400px;
@@ -173,7 +175,7 @@
                     margin: 10px auto;
                 }
                 p {
-                    margin-top: 10px;
+                    margin: 10px 0;
                 }
             }
         }

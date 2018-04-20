@@ -15,20 +15,21 @@
                                 <el-main>
                                     <p class="name">{{book.bookName}}</p>
                                     <div class="deta">
-                                        <p class="sale" v-if="book.bookSale<1">
-                                            折扣价:
-                                            <span>{{format(book.bookPrice*book.bookSale)}}</span> [{{book.bookSale*10}}折] 原价:
-                                            <i>{{format(book.bookPrice)}}</i>
-                                        </p>
-                                        <p class="price" v-else>售价:</p>
+                                        <template>
+                                            <p class="sale" v-if="book.bookSale<1">
+                                                折扣价:
+                                                <span>{{format(book.bookPrice*book.bookSale)}}</span> [{{book.bookSale*10}}折] 原价:
+                                                <i>{{format(book.bookPrice)}}</i>
+                                            </p>
+                                            <p class="price" v-else>售价:</p>
+                                        </template>
                                         <p class="Info">描述: {{book.bookInfo}}</p>
                                         <p class="hot">搜索热度: {{book.bookSearch}}</p>
                                         <p class="sold">交易成功: {{book.bookSold}}</p>
                                         <p>出版日期:{{book.bookDate}}</p>
                                     </div>
                                     <div class="func">
-                                        <el-button type="warning" round>加入收藏</el-button>
-                                        <el-button type="success" round>加入购物车</el-button>
+                                        <my-button :book="book" />
                                     </div>
                                 </el-main>
                             </el-container>
@@ -54,6 +55,7 @@
         getHeight,
         formatPrice
     } from '../common';
+    import myButton from '../base/button.vue'
     export default {
         data() {
             return {
@@ -65,7 +67,7 @@
             async getbook(id) {
                 this.book = await getDetail(id);
             },
-            format(value){
+            format(value) {
                 return formatPrice(value);
             },
             goBack() {
@@ -78,7 +80,7 @@
             this.height = "height:" + curHeight + "px";
         },
         components: {
-
+            myButton
         },
         computed: {
 
@@ -143,11 +145,6 @@
                         }
                         .func {
                             padding: 10px;
-                            .el-button {
-                                &:nth-child(1) {
-                                    margin-right: 100px;
-                                }
-                            }
                         }
                     }
                     .el-footer {

@@ -50,7 +50,7 @@
             this.height = "height:" + curHeight + "px";
         },
         methods: {
-
+            
         },
         components: {},
         computed: {}

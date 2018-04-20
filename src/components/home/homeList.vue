@@ -12,14 +12,13 @@
             <el-main>
                 <ul class="bookList">
                     <li v-for="(item,index) in books" :class="{display:hover==index}" :key="index" @mouseover="addClass(index)" @mouseout="removeClass">
-                        <div>
+                        <div class="book">
                             <router-link :to="{path:'/detail',name:'detail',params:{bid:item.bookId}}" tag="img" :src="item.bookCover" alt="" />
                             <el-tag type="info">
                                 {{item.bookName}}
                             </el-tag>
-                            <p>￥:{{item.bookPrice*item.bookSale}}</p>
-                            <el-button type="warning" round>加入收藏</el-button>
-                            <el-button type="success" round>加入购物车</el-button>
+                            <p>售价:{{format(item.bookPrice*item.bookSale)}}</p>
+                            <my-button :book="item"/>
                         </div>
                     </li>
                 </ul>
@@ -32,6 +31,10 @@
     import {
         getBooks
     } from "../../api";
+    import myButton from '../../base/button.vue'
+        import {
+        formatPrice
+    } from "../../common";
     export default {
         props: {
             index: {
@@ -67,6 +70,9 @@
             removeClass() {
                 this.hover = null;
             },
+             format(value) {
+                return formatPrice(value);
+            },
             sort(cur) {
                 this.flag *= -1;
                 switch (cur) {
@@ -90,7 +96,7 @@
             }
         },
         components: {
-
+            myButton
         },
         computed: {
 
@@ -140,7 +146,7 @@
                     height: 300px;
                     overflow: hidden;
                     position: relative;
-                    div {
+                    .book{
                         position: absolute;
                         width: 310px;
                         height: 400px;
@@ -157,7 +163,7 @@
                             margin: 10px auto;
                         }
                         p {
-                            margin-top: 10px;
+                            margin: 10px 0;
                         }
                     }
                 }
