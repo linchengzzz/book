@@ -8,3 +8,5 @@ export const ISCOLLECT = 'ISCOLLECT';
 export const ADD_CAR = 'ADD_CAR';
 //移除购物车
 export const REMOVE_CAR = 'REMOVE_CAR';
+//更新购物车
+export const UPDATA_CAR = 'UPDATA_CAR';

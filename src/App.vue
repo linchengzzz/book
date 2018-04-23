@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import myHeader  from './base/header.vue'
+    import myHeader from './base/header.vue'
     import myBody from './base/body.vue'
     export default {
         data() {
@@ -21,8 +21,8 @@
             myHeader,
             myBody
         },
-        created () {
-           window.location.hash='/home/com/sold' 
+        created() {
+            window.location.hash = '/home/com/sold'
         },
         computed: {
 
@@ -31,17 +31,29 @@
 
 </script>
 
-<style>
-    *{
+<style lang="less">
+    * {
         margin: 0;
         padding: 0;
     }
-    a{
+
+    a {
         text-decoration: none;
-        
+
     }
-    ul,li{
+
+    ul,
+    li {
         list-style: none;
+    }
+
+    .el-table {
+        th {
+            text-align: center ;
+        }
+        td{
+            text-align: center;
+        }
     }
 
 </style>

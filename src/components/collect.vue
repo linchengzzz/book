@@ -57,10 +57,9 @@
         },
         methods: {
             removeCollect(book){
-                console.log(1);
                 this.$store.commit(Types.REMOVE_COLLECT,book)
             },
-             format(value) {
+            format(value) {
                 return formatPrice(value);
             }
         },
