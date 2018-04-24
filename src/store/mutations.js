@@ -34,5 +34,13 @@ const mustaions = {
             return item;
         })
     },
+    [Types.DEL_SELECTED](state, books) {
+        if (books.length > 0) {
+            state.carList = state.carList.filter(item => !books.find(book => book.bookId === item.bookId))
+        }
+    },
+    [Types.CLEAR_CAR](state) {
+        state.carList = [];
+    }
 }
 export default mustaions;

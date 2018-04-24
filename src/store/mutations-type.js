@@ -10,3 +10,7 @@ export const ADD_CAR = 'ADD_CAR';
 export const REMOVE_CAR = 'REMOVE_CAR';
 //更新购物车
 export const UPDATA_CAR = 'UPDATA_CAR';
+//移除选中
+export const DEL_SELECTED = 'DEL_SELECTED';
+//清楚购物车
+export const CLEAR_CAR = 'CLEAR_CAR'

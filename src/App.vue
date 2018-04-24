@@ -41,7 +41,9 @@
         text-decoration: none;
 
     }
-
+    i{
+        font-style: normal;
+    }
     ul,
     li {
         list-style: none;

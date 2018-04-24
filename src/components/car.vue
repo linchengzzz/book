@@ -6,7 +6,7 @@
         <el-main :style="height">
             <el-row :gutter="20">
                 <el-col :span="18" :offset="3">
-                    <el-table ref="multipleTable" :data="carList" tooltip-effect="dark" style="width: 100%">
+                    <el-table ref="multipleTable" :data="carList" tooltip-effect="dark" style="width: 100%" @selection-change="change">
                         <el-table-column label="全选" type="selection" width="55">
                         </el-table-column>
                         <el-table-column width="80">
@@ -40,9 +40,43 @@
                             </template>
                         </el-table-column>
                     </el-table>
+
                 </el-col>
             </el-row>
         </el-main>
+        <el-footer>
+            <el-row :gutter="20">
+                <el-col :span="18" :offset="3">
+                    <div class="">
+                        <el-row :gutter="20">
+                            <el-col :span="8">
+                                <div class="clearCar">
+                                    <span @click="delSelected">删除选中图书</span>
+                                    <span @click="clearCar">清空购物车</span>
+                                </div>
+                            </el-col>
+                            <el-col :span="8" :offset="8">
+                                <div>
+                                    <span>总价：</span>
+                                    <span class="sumPrice">{{sumPrice}}</span>
+                                    <el-button type="danger"  @click="payClick">去付款</el-button>
+                                </div>
+                            </el-col>
+                        </el-row>
+                    </div>
+                </el-col>
+            </el-row>
+        </el-footer>
+        <el-dialog title="付款页面" :visible.sync="DialogVisible" width="30%" center>
+            <div class="pay">
+                <img src="@/assets/QRCode.png" alt="">
+                <span>扫码支付:<i class="sumPrice">{{sumPrice}}</i></span>
+            </div>
+            <span slot="footer" class="dialog-footer">
+                <el-button type="success" @click="paySure">确认支付</el-button>
+                <el-button @click="DialogVisible = false">取 消</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
@@ -59,7 +93,10 @@
         data() {
             return {
                 height: '',
-                data: []
+                data: [],
+                multipleSelection: [],
+                itemId: [],
+                DialogVisible:false
             };
         },
         created() {
@@ -67,21 +104,60 @@
             this.height = "height:" + curHeight + "px";
         },
         methods: {
+            change(val) {
+                this.multipleSelection = val;
+            },
             format(value) {
                 return formatPrice(value);
             },
             handleChange(scope) {
-                this.$store.commit(Types.UPDATA_CAR, scope)
+                this.itemId = this.multipleSelection.map(item => item.bookId);
+                this.$store.commit(Types.UPDATA_CAR, scope);
             },
-            removeCar(book){
-                 this.$store.commit(Types.REMOVE_CAR,book)
+            removeCar(book) {
+                this.$store.commit(Types.REMOVE_CAR, book)
             },
+            delSelected() {
+                this.$store.commit(Types.DEL_SELECTED, this.multipleSelection)
+            },
+            clearCar() {
+                this.$store.commit(Types.CLEAR_CAR)
+            },
+            payClick(){
+                if(this.multipleSelection.length>0){
+                    this.DialogVisible = true;
+                }
+            },
+            paySure(){
+                this.delSelected();
+                this.DialogVisible = false;
+            }
+        },
+        updated() {
+            this.itemId.forEach(item => {
+                this.carList.find(book => {
+                    if (book.bookId === item) {
+                        this.$refs.multipleTable.toggleRowSelection(book, true);
+                    }
+                })
+            })
+            this.itemId = [];
         },
         components: {
 
         },
         computed: {
-            ...mapState(['carList'])
+            ...mapState(['carList']),
+            sumPrice() {
+                if (this.multipleSelection.length > 0) {
+                    let sum = this.multipleSelection.reduce((prev, next) => {
+                        return prev + next.bookPrice * next.bookSale * next.num;
+                    }, 0)
+                    return this.format(sum) + '元'
+                } else {
+                    return 0 + ' 元';
+                }
+            }
         }
     };
 
@@ -100,4 +176,35 @@
         width: 120px;
     }
 
+    .el-footer {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: #eee;
+        position: fixed;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 -2px 10px 3px #ddd;
+        bottom: 0;
+        .clearCar {
+            span {
+                cursor: pointer;
+                font-size: 14px;
+                margin-right: 20px;
+                &:hover {
+                    color: #f00;
+                }
+            }
+        }
+    }
+    .pay{
+        text-align: center;
+        span{
+            display: block;
+            font-size: 18px;
+        }
+    }
+    .sumPrice{
+        color:#f00;
+    }
 </style>
