@@ -177,6 +177,9 @@
                 p {
                     margin: 10px 0;
                 }
+                &:hover{
+                    z-index: 101;
+                }
             }
         }
     }

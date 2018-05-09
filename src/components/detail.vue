@@ -23,6 +23,7 @@
                                             </p>
                                             <p class="price" v-else>售价:</p>
                                         </template>
+                                        <p class="Info">作者: {{book.bookAuthor}}</p>
                                         <p class="Info">描述: {{book.bookInfo}}</p>
                                         <p class="hot">搜索热度: {{book.bookSearch}}</p>
                                         <p class="sold">交易成功: {{book.bookSold}}</p>

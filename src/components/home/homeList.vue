@@ -2,12 +2,21 @@
     <div class="homeList">
         <el-container>
             <el-header>
-                <el-button-group style="margin-bottom: 30px;">
-                    <el-button @click="sort('all')">综合排序</el-button>
-                    <el-button @click="sort('sold')">销量</el-button>
-                    <el-button @click="sort('price')">价格</el-button>
-                    <el-button @click="sort('date')">出版时间</el-button>
-                </el-button-group>
+                <el-row :gutter="20">
+                    <el-col :span="20">
+                        <el-button-group style="margin-bottom: 30px;">
+                            <el-button @click="sort('all')">综合排序</el-button>
+                            <el-button @click="sort('sold')">销量</el-button>
+                            <el-button @click="sort('price')">价格</el-button>
+                            <el-button @click="sort('date')">出版时间</el-button>
+                        </el-button-group>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-input placeholder="请输入内容" style="margin-top:10px" v-model="input" class="input-with-select">
+                            <el-button slot="append" icon="el-icon-search"></el-button>
+                        </el-input>
+                    </el-col>
+                </el-row>
             </el-header>
             <el-main>
                 <ul class="bookList">
@@ -18,21 +27,21 @@
                                 {{item.bookName}}
                             </el-tag>
                             <p>售价:{{format(item.bookPrice*item.bookSale)}}</p>
-                            <my-button :book="item"/>
+                            <my-button :book="item" />
                         </div>
                     </li>
                 </ul>
             </el-main>
         </el-container>
     </div>
-</template>z``
+</template>
 
 <script>
     import {
         getBooks
     } from "../../api";
     import myButton from '../../base/button.vue'
-        import {
+    import {
         formatPrice
     } from "../../common";
     export default {
@@ -47,7 +56,8 @@
                 books: [],
                 allBooks: [],
                 hover: null,
-                flag: 1
+                flag: 1,
+                input:''
             };
         },
         created() {
@@ -70,7 +80,7 @@
             removeClass() {
                 this.hover = null;
             },
-             format(value) {
+            format(value) {
                 return formatPrice(value);
             },
             sort(cur) {
@@ -83,7 +93,8 @@
                         this.books.sort((prev, next) => this.flag * (prev.bookSold - next.bookSold))
                         break;
                     case 'price':
-                        this.books.sort((prev, next) => this.flag * (prev.bookPrice * prev.bookSale - next.bookPrice * next.bookSale))
+                        this.books.sort((prev, next) => this.flag * (prev.bookPrice * prev.bookSale - next.bookPrice *
+                            next.bookSale))
                         break;
                     case 'date':
                         this.books.sort((prev, next) => {
@@ -125,8 +136,12 @@
             height: 60px;
             background: #b3c0d1;
             display: flex;
-            .el-button-group {
-                margin-top: 10px;
+            width: 100%;
+            .el-row {
+                width: 100%;
+                .el-button-group {
+                    margin-top: 10px;
+                }
             }
         }
         .el-main {
@@ -146,7 +161,7 @@
                     height: 300px;
                     overflow: hidden;
                     position: relative;
-                    .book{
+                    .book {
                         position: absolute;
                         width: 310px;
                         height: 400px;
@@ -164,6 +179,9 @@
                         }
                         p {
                             margin: 10px 0;
+                        }
+                        &:hover{
+                            z-index: 101;
                         }
                     }
                 }

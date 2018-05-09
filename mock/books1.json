@@ -1,0 +1,61 @@
+[{
+    "bookId":1,
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue.js权威指南 novel",
+    "bookInfo": "与React|Angular三分天下 ",
+    "bookPrice": "100",
+    "bookSearch":100,
+    "bookSale":0.1,
+    "bookSold":10,
+    "bookType":"novel",
+    "bookDate":"2014-10-16",
+    "bookContant":"本书以Vue2的实践应用为根基，从实际示例入手，详细讲解Vue2的基础理论应用及高级组件开发，通过简明易懂的实例代码，生动地让读者快速、全方位地掌握Vue2的各种入门技巧以及一些在实际项目中的宝贵经验。本书除了全面、细致地讲述Vue2的生态结构、实际编程技巧和一些从实践中得到的经验，还重点介绍如何以组件化编程思想为指导，以前端工程化方法为实现手段来实践Vue2，通过组件的单元测试和E2E测试来保证工程质量。"
+},{
+    "bookId":2,
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue.js权威指南 child",
+    "bookInfo": "与React|Angular三分天下 ",
+    "bookPrice": "200",
+    "bookSearch":200,
+    "bookSale":0.2,
+    "bookSold":20,
+    "bookType":"child",
+    "bookDate":"2014-10-17",
+    "bookContant":"本书以Vue2的实践应用为根基，从实际示例入手，详细讲解Vue2的基础理论应用及高级组件开发，通过简明易懂的实例代码，生动地让读者快速、全方位地掌握Vue2的各种入门技巧以及一些在实际项目中的宝贵经验。本书除了全面、细致地讲述Vue2的生态结构、实际编程技巧和一些从实践中得到的经验，还重点介绍如何以组件化编程思想为指导，以前端工程化方法为实现手段来实践Vue2，通过组件的单元测试和E2E测试来保证工程质量。"
+},{
+    "bookId":3,
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue.js权威指南 tool",
+    "bookInfo": "与React|Angular三分天下 ",
+    "bookPrice": "300",
+    "bookSearch":300,
+    "bookSale":0.3,
+    "bookSold":30,
+    "bookType":"tool",
+    "bookDate":"2014-10-18",
+    "bookContant":"本书以Vue2的实践应用为根基，从实际示例入手，详细讲解Vue2的基础理论应用及高级组件开发，通过简明易懂的实例代码，生动地让读者快速、全方位地掌握Vue2的各种入门技巧以及一些在实际项目中的宝贵经验。本书除了全面、细致地讲述Vue2的生态结构、实际编程技巧和一些从实践中得到的经验，还重点介绍如何以组件化编程思想为指导，以前端工程化方法为实现手段来实践Vue2，通过组件的单元测试和E2E测试来保证工程质量。"
+},{
+    "bookId":4,
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue.js权威指南 prose",
+    "bookInfo": "与React|Angular三分天下 ",
+    "bookPrice": "400",
+    "bookSearch":400,
+    "bookSale":0.4,
+    "bookSold":40,
+    "bookType":"prose",
+    "bookDate":"2014-10-19",
+    "bookContant":"本书以Vue2的实践应用为根基，从实际示例入手，详细讲解Vue2的基础理论应用及高级组件开发，通过简明易懂的实例代码，生动地让读者快速、全方位地掌握Vue2的各种入门技巧以及一些在实际项目中的宝贵经验。本书除了全面、细致地讲述Vue2的生态结构、实际编程技巧和一些从实践中得到的经验，还重点介绍如何以组件化编程思想为指导，以前端工程化方法为实现手段来实践Vue2，通过组件的单元测试和E2E测试来保证工程质量。"
+},{
+    "bookId":5,
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue.js权威指南 manga",
+    "bookInfo": "与React|Angular三分天下 ",
+    "bookPrice": "500",
+    "bookSearch":500,
+    "bookSale":0.5,
+    "bookSold":50,
+    "bookType":"manga",
+    "bookDate":"2014-10-20",
+    "bookContant":"本书以Vue2的实践应用为根基，从实际示例入手，详细讲解Vue2的基础理论应用及高级组件开发，通过简明易懂的实例代码，生动地让读者快速、全方位地掌握Vue2的各种入门技巧以及一些在实际项目中的宝贵经验。本书除了全面、细致地讲述Vue2的生态结构、实际编程技巧和一些从实践中得到的经验，还重点介绍如何以组件化编程思想为指导，以前端工程化方法为实现手段来实践Vue2，通过组件的单元测试和E2E测试来保证工程质量。"
+}]
