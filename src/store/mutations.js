@@ -1,6 +1,6 @@
 
 import * as Types from './mutations-type'
-const mustaions = {
+const mutations = {
     [Types.ADD_COLLECT](state, book) {
         let product = state.collectList.find(item => item.bookId === book.bookId);
         if (!product) {
@@ -41,6 +41,9 @@ const mustaions = {
     },
     [Types.CLEAR_CAR](state) {
         state.carList = [];
+    },
+    [Types.IS_LOGIN](state,newState){
+        state.login = newState;
     }
 }
-export default mustaions;
+export default mutations;

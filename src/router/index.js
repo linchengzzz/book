@@ -9,7 +9,7 @@ import homeList from '../components/home/homeList.vue'
 import detail from '../components/detail.vue'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     routes: [{
         path: "/",
         redirect: "/home/com/sold"
@@ -44,5 +44,10 @@ export default new Router({
         path: '/detail',
         name: 'detail',
         component: detail
+    }, {
+        path: "*",
+        redirect: "/home/com/sold"
     }]
 })
+
+export default router;

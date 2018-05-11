@@ -37,7 +37,7 @@
                             <el-footer>
                                 <div class="intro">
                                     <p>书籍简介:</p>
-                                    <p class="content">{{book.bookContant}}</p>
+                                    <p class="content">{{book.bookContent}}</p>
                                 </div>
                             </el-footer>
                         </el-container>

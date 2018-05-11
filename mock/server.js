@@ -28,23 +28,3 @@ app.get('/detail', (req, res, next) => {
 app.all('*', function (req, res) {
     res.send(404, 'Sorry,can not found that');
 })
-// http.createServer((request, response) => {
-//     response.setHeader("Access-Control-Allow-Origin", "*");
-//     response.setHeader("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-//     response.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-//     response.setHeader("X-Powered-By", ' 3.2.1')
-//     if (request.method === 'OPTIONS') return response.end();
-//     let {
-//         pathname,
-//         query
-//     } = url.parse(request.url);
-//     if (pathname === '/books') {
-//         fs.readFile('./books.json', 'utf8', (err, data) => {
-//             if (err) throw err;
-//             else {
-//                 response.setHeader('Content-Type', 'application/json;charset=utf-8');
-//                 return response.end(data);
-//             }
-//         })
-//     }
-// }).listen(8010);

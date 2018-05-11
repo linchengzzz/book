@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div class="login" v-if="!show">
+        <my-login></my-login>
+    </div>
+    <div v-else>
         <my-header></my-header>
         <my-body></my-body>
     </div>
@@ -8,10 +11,11 @@
 <script>
     import myHeader from './base/header.vue'
     import myBody from './base/body.vue'
+    import myLogin from './base/login.vue';
+    import {isLogin} from './common';
     export default {
         data() {
             return {
-
             };
         },
         methods: {
@@ -19,13 +23,15 @@
         },
         components: {
             myHeader,
-            myBody
+            myBody,
+            myLogin
         },
         created() {
-            window.location.hash = '/home/com/sold'
         },
         computed: {
-
+            show:function(){
+                return this.$store.state.login;
+            }
         }
     };
 
@@ -36,9 +42,8 @@
         margin: 0;
         padding: 0;
     }
-
-    a {
-        text-decoration: none;
+    html,body{
+        height: 100%;
 
     }
     i{
@@ -48,7 +53,12 @@
     li {
         list-style: none;
     }
-
+    a {
+        text-decoration: none;
+    }
+    .login{
+        height: 100%;
+    }
     .el-table {
         th {
             text-align: center ;

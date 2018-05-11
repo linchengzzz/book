@@ -6,7 +6,8 @@ import mutations from './mutations'
 export default new Vuex.Store({
     state: {
         collectList: [],
-        carList:[]
+        carList:[],
+        login:false
     },
     mutations
 })
