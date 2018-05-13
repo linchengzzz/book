@@ -44,6 +44,9 @@ const mutations = {
     },
     [Types.IS_LOGIN](state,newState){
         state.login = newState;
+    },
+    [Types.GET_MANAGE_BOOKS](state,books){
+        state.manageBooks = books;
     }
 }
 export default mutations;

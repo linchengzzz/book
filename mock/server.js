@@ -14,7 +14,7 @@ app.all('*', function (req, res, next) {
 app.get('/books', (req, res) => {
     return res.sendFile(__dirname + '/books.json');
 })
-app.get('/detail', (req, res, next) => {
+app.get('/detail', (req, res) => {
     let curId = req.query.id;
     fs.readFile('./books.json', 'utf8', (err, data) => {
         if (err) throw err;
@@ -25,6 +25,28 @@ app.get('/detail', (req, res, next) => {
         }
     })
 })
+app.get('/manage/getBooks',(req,res)=>{
+    let type = req.query.type;
+    let content = req.query.content;
+    fs.readFile('./books.json','utf8',(err,data)=>{
+        if(err) throw err;
+        else{
+            data = JSON.parse(data);
+            let books = [];
+            if(type==''||type=='all'){
+                books = data;
+            }else{
+                books = data.filter(item=>item.bookType==type)
+            }
+            if(content==''){
+                books = books;
+            }else{
+                books = books.filter(item=>item.bookName.indexOf(content)>0)
+            }
+            return res.send(JSON.stringify(books))
+        }
+    })
+})
 app.all('*', function (req, res) {
-    res.send(404, 'Sorry,can not found that');
+    return res.send(404, 'Sorry,can not found that');
 })

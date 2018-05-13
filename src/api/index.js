@@ -15,3 +15,7 @@ export let getBooks = () => {
 export let getDetail = (id) => {
     return Axios.get('/detail/?id='+id)
 }
+//管理图书--获取图书
+export let getManageBooks = (type,content) =>{
+    return Axios.get(`/manage/getBooks?type=${type}&content=${content}`)
+}

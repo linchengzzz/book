@@ -7,7 +7,8 @@ export default new Vuex.Store({
     state: {
         collectList: [],
         carList:[],
-        login:false
+        login:false,
+        manageBooks:[]
     },
     mutations
 })

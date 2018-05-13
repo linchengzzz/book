@@ -16,3 +16,5 @@ export const DEL_SELECTED = 'DEL_SELECTED';
 export const CLEAR_CAR = 'CLEAR_CAR'
 //判断是否登录
 export const IS_LOGIN = 'IS_LOGIN'
+//管理图书--搜索图书
+export const GET_MANAGE_BOOKS = 'GET_MANAGE_BOOKS';
