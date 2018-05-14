@@ -27,7 +27,6 @@ export default {
     methods: {
         async search(){
             let books = await getManageBooks(this.select,this.input);
-            console.log(books);
             this.$store.commit(Types.GET_MANAGE_BOOKS,books);
         }
     },

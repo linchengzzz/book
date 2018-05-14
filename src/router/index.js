@@ -11,6 +11,8 @@ import manageCheck from '../components/manage/manageCheck.vue';
 import manageAdd from '../components/manage/manageAdd.vue';
 import manageUpdate from '../components/manage/manageUpdate.vue';
 import manageDelete from '../components/manage/manageDelete.vue';
+import manageDetail from '../components/manage/manageDetail.vue';
+
 Vue.use(Router)
 
 const router = new Router({
@@ -60,6 +62,10 @@ const router = new Router({
             path:'/manage/delete',
             name:'manageDelete',
             component:manageDelete
+        },{
+            path:'/manage/detail',
+            name:'manageDetail',
+            component:manageDetail
         }]
     }, {
         path: '/detail',

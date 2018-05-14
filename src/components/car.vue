@@ -28,12 +28,12 @@
                                 </template>
                             </template>
                         </el-table-column>
-                        <el-table-column label="小计" width="180">
+                        <el-table-column label="小计" width="120">
                             <template slot-scope="scope">
                                 <span>{{format(scope.row.bookPrice*scope.row.bookSale*scope.row.num)}}</span>
                             </template>
                         </el-table-column>
-                        <el-table-column label="操作">
+                        <el-table-column label="操作" width="280">
                             <template slot-scope="scope">
                                 <router-link :to="{path:'/detail',name:'detail',params:{bid:scope.row.bookId}}" size="mini" tag="el-button" alt="">查看详情</router-link>
                                 <el-button type="danger" @click="removeCar(scope.row)">移除购物车</el-button>

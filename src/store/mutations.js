@@ -47,6 +47,12 @@ const mutations = {
     },
     [Types.GET_MANAGE_BOOKS](state,books){
         state.manageBooks = books;
+    },
+    [Types.CLEAR_MANAGE_BOOKS](state){
+        state.manageBooks = [];
+    },
+    [Types.DELETE_MANAGE_BOOK](state,id){
+        state.manageBooks = state.manageBooks.filter(book=>book.bookId!=id);
     }
 }
 export default mutations;

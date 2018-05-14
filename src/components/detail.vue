@@ -18,7 +18,7 @@
                                         <template>
                                             <p class="sale" v-if="book.bookSale<1">
                                                 折扣价:
-                                                <span>{{format(book.bookPrice*book.bookSale)}}</span> [{{book.bookSale*10}}折] 原价:
+                                                <span>{{format(book.bookPrice*book.bookSale)}}</span> [{{(book.bookSale*10).toFixed(1)}}折] 原价:
                                                 <i>{{format(book.bookPrice)}}</i>
                                             </p>
                                             <p class="price" v-else>售价:</p>

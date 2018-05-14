@@ -18,3 +18,7 @@ export const CLEAR_CAR = 'CLEAR_CAR'
 export const IS_LOGIN = 'IS_LOGIN'
 //管理图书--搜索图书
 export const GET_MANAGE_BOOKS = 'GET_MANAGE_BOOKS';
+//管理图书--清空图书
+export const CLEAR_MANAGE_BOOKS = 'CLEAR_MANAGE_BOOKS';
+//管理图书--删除图书
+export const DELETE_MANAGE_BOOK = 'DELETE_MANAGE_BOOK'

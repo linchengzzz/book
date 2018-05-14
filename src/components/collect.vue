@@ -7,25 +7,25 @@
             <el-row :gutter="20">
                 <el-col :span="18" :offset="3">
                     <el-table :data="collectList" stripe style="width: 100%">
-                        <el-table-column prop="bookDate" label="出版日期" width="180">
+                        <el-table-column prop="bookDate" label="出版日期" width="120">
                         </el-table-column>
-                        <el-table-column prop="bookCover" label="书籍图片" width="180">
+                        <el-table-column prop="bookCover" label="书籍图片" width="120">
                             <template slot-scope="scope">
                                 <img :src="scope.row.bookCover" alt="" width="60">
                             </template>
                         </el-table-column>
                         <el-table-column prop="bookName" label="书名" width="180">
                         </el-table-column>
-                        <el-table-column label="价格" width="180">
+                        <el-table-column label="价格" width="100">
                             <template slot-scope="scope">
                                 <span>{{format(scope.row.bookPrice*scope.row.bookSale)}}</span>
                             </template>
                         </el-table-column>
                         <el-table-column prop="bookInfo" label="描述">
                         </el-table-column>
-                        <el-table-column label="操作">
+                        <el-table-column label="操作" winth="280">
                             <template slot-scope="scope">
-                                <router-link :to="{path:'/detail',name:'detail',params:{bid:scope.row.bookId}}" size="mini"  tag="el-button" alt="">查看详情</router-link>
+                                <router-link :to="{path:'/detail',name:'detail',params:{bid:scope.row.bookId}}" tag="el-button" alt="">查看详情</router-link>
                                 <el-button type="danger" @click="removeCollect(scope.row)">取消收藏</el-button>
                             </template>
                         </el-table-column>
