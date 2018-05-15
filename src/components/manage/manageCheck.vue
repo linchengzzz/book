@@ -58,7 +58,7 @@ export default {
                     return '工具';
                 case 'prose':
                     return '散文';
-                case 'manage':
+                case 'manga':
                     return '动漫';
             }
         }

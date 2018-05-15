@@ -10,9 +10,7 @@ const Axios = axios.create({
 Vue.use(Axios);
 
 
-// Axios.defaults.baseURL = 'http://localhost:8010';
 Axios.interceptors.response.use(response => response.data)
-// Axios.interceptors.request.use(config => JSON.stringify(config))
 
 //获取所有的书籍
 export let getBooks = () => {
