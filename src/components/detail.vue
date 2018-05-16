@@ -21,7 +21,7 @@
                                                 <span>{{format(book.bookPrice*book.bookSale)}}</span> [{{(book.bookSale*10).toFixed(1)}}折] 原价:
                                                 <i>{{format(book.bookPrice)}}</i>
                                             </p>
-                                            <p class="price" v-else>售价:</p>
+                                            <p class="price" v-else>售价:<i>{{book.bookSale}}</i></p>
                                         </template>
                                         <p class="Info">作者: {{book.bookAuthor}}</p>
                                         <p class="Info">描述: {{book.bookInfo}}</p>
@@ -67,6 +67,8 @@
         methods: {
             async getbook(id) {
                 this.book = await getDetail(id);
+                let reg = new RegExp(/^\d+-\d+-\d+/);
+                this.book.bookDate = reg.exec(this.book.bookDate)[0];
             },
             format(value) {
                 return formatPrice(value);

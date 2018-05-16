@@ -62,13 +62,15 @@ export default {
     },
     methods: {
         async getBook() {
-            this.oldBooks = this.books = this.allBooks = await getBooks();
-            if (this.index != "all") {
-                this.typeBook(this.index);
-            }
+            this.allBooks = await getBooks();
+            this.typeBook(this.index);
         },
         typeBook(type) {
-            this.books = this.oldBooks = this.allBooks.filter(item => item.bookType == type);
+            if (this.index == "all") {
+                this.oldBooks = this.books = this.allBooks;
+            }else{
+                this.oldBooks = this.books = this.allBooks.filter(item => item.bookType == type);
+            }
         },
         addClass(index) {
             this.hover = index;
@@ -101,16 +103,19 @@ export default {
                     break;
                 case "date":
                     this.books.sort((prev, next) => {
-                        prev.bookDate = prev.bookDate.replace(/-/g, "");
-                        next.bookDate = next.bookDate.replace(/-/g, "");
-                        return this.flag * (prev.bookDate - next.bookDate);
+                        let reg = new RegExp(/^\d+-\d+-\d+/);
+                        let newPrevBookDate = reg.exec(prev.bookDate)[0];
+                        let newNextBookDate = reg.exec(next.bookDate)[0];
+                        newPrevBookDate = newPrevBookDate.replace(/-/g, "");
+                        newNextBookDate = newNextBookDate.replace(/-/g, "");
+                        // console.log(newPrevBookDate,newNextBookDate);
+                        return this.flag * (newPrevBookDate - newNextBookDate);
                     });
                     break;
             }
         },
         search() {
             if (this.input == "") {
-                console.log(this.oldBooks);
                 this.books = this.oldBooks;
             } else {
                 this.books = this.oldBooks.filter(

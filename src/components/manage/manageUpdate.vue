@@ -23,6 +23,8 @@
                                 <p>{{types(scope.row.bookType)}}</p>
                             </template>
                         </el-table-column>
+                        <el-table-column prop="bookInfo" label="描述" width="200">
+                        </el-table-column>
                         <el-table-column fixed="right" label="操作" center width="100">
                             <template slot-scope="scope">
                                 <router-link :to="{path:'/manage/detail:id',name:'manageDetail',params:{bid:scope.row.bookId}}" tag="el-button">修改</router-link>

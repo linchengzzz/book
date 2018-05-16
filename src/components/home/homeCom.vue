@@ -61,7 +61,7 @@
                 this.headerText = text + '图书';
             },
             async getBook() {
-                this.books = this.allBooks = await getBooks();
+                this.books = this.allBooks = (await getBooks()).slice(0,20);
                 switch (this.index) {
                     case 'sold':
                         this.soldBooks();
