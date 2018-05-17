@@ -2,7 +2,7 @@ import axios from "axios";
 import qs from 'qs';
 import Vue from "vue";
 const Axios = axios.create({
-    baseURL: 'http://localhost:8010',
+    baseURL: 'http://127.0.0.1:8010',
     headers: {
         'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
     }
