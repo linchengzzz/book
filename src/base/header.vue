@@ -2,7 +2,7 @@
     <div class="header"> 
         <el-row type="flex" justify="space-around">
             <el-col :span="5">
-                <div class="logo"><i class="el-icon-tickets"></i> 木木图书馆</div>
+                <div class="logo"><i class="el-icon-tickets"></i> 图书购物商城 </div>
             </el-col>
             <el-col :span="12">
                 <my-nav></my-nav>
@@ -36,14 +36,7 @@
         computed: {
             username:function(){
                 let username = window.localStorage[User.USERNAME];
-                switch(username){
-                    case 'custom':
-                        return '普通用户';
-                    case 'admin':
-                        return '管理员';
-                    default:
-                        return '请登录';
-                }
+                return username;
             }
         }
     };

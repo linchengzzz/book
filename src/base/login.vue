@@ -4,7 +4,7 @@
             <el-col :span="12" :offset="6">
                 <el-card shadow="hover">
                     <el-header>
-                        <h2>木木图书馆</h2>
+                        <h2>图书管理系统</h2>
                         <h3>请选择登录用户</h3>
                     </el-header>
                     <el-main>
