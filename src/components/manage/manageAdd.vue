@@ -54,8 +54,10 @@
         </el-main>
     </div>
 </template>
+
 <script>
-import {setManageBook} from '../../api';
+import { setManageBook } from '../../api';
+
 export default {
     data() {
         return {
@@ -146,7 +148,7 @@ export default {
     methods: {
         async addBook(book){
             let result = await setManageBook(book);
-            if(result.code==1){
+            if(result.code == 1){
                 this.book = {}
             }else{
                 this.$message({

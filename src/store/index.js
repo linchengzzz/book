@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import mutations from './mutations';
 
 Vue.use(Vuex);
-import mutations from './mutations'
+
 export default new Vuex.Store({
     state: {
         collectList: [],
-        carList:[],
-        login:false,
-        manageBooks:[]
+        carList: [],
+        login: false,
+        manageBooks: [],
     },
-    mutations
-})
+    mutations,
+});

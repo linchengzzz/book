@@ -13,26 +13,28 @@
         </el-input>
     </div>
 </template>
+
 <script>
 import {getManageBooks} from '../../api';
 import * as Types from '../../store/mutations-type';
+
 export default {
     data() {
         return {
-            input:'',
-            select:''
+            input: '',
+            select: '',
         };
     },
     created() {},
     methods: {
-        async search(){
-            let books = await getManageBooks(this.select,this.input);
-            this.$store.commit(Types.GET_MANAGE_BOOKS,books);
+        async search() {
+            let books = await getManageBooks(this.select, this.input);
+            this.$store.commit(Types.GET_MANAGE_BOOKS, books);
         }
     },
     watch: {},
     components: {},
-    computed: {}
+    computed: {},
 };
 </script>
 

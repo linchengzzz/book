@@ -36,11 +36,13 @@
         </el-main>
     </div>
 </template>
+
 <script>
 import ManageHeader from "./manageHeader";
 import ManageSearch from "./manageSearch.vue";
 import * as Types from "../../store/mutations-type";
 import {delManageBook} from '../../api';
+
 export default {
     data() {
         return {};
@@ -65,7 +67,7 @@ export default {
         },
         async deleteBook(id){
             let result = await delManageBook(id);
-            if(result.code==1){
+            if(result.code == 1){
                 this.$store.commit(Types.DELETE_MANAGE_BOOK,id)
             }else{
                 this.$message({

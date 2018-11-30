@@ -53,6 +53,7 @@
 
 <script>
 import { getManageBook, setManageBook } from "../../api";
+
 export default {
     data() {
         return {
@@ -62,63 +63,63 @@ export default {
                     {
                         required: true,
                         message: "请输入图书封面",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookName: [
                     {
                         required: true,
                         message: "请输入图书名称",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookAuthor: [
                     {
                         required: true,
                         message: "请输入图书作者",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookInfo: [
                     {
                         required: true,
                         message: "请输入简介",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookPrice: [
                     {
                         required: true,
                         message: "请输入价格",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookSearch: [
                     {
                         required: true,
                         message: "请输入搜索热度",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookSale: [
                     {
                         required: true,
                         message: "请输入折扣",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookSold: [
                     {
                         required: true,
                         message: "请输入售量",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookType: [
                     {
                         required: true,
                         message: "请选择图书分类",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookDate: [
@@ -126,14 +127,14 @@ export default {
                         type: "date",
                         required: true,
                         message: "请选择日期",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ],
                 bookContent: [
                     {
                         required: true,
                         message: "请填写图书简介",
-                        trigger: "blur"
+                        trigger: "blur",
                     }
                 ]
             }
@@ -149,12 +150,12 @@ export default {
         },
         async updateBook(book){
             let result = await setManageBook(book);
-            if(result.code==1){
+            if (result.code == 1){
                 this.$router.history.go(-1);
-            }else{
+            } else {
                 this.$message({
                     type: "error",
-                    message: "删除失败"
+                    message: "删除失败",
                 });
             }
         },

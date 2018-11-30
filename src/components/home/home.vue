@@ -35,9 +35,7 @@
 </template>
 
 <script>
-    import {
-        getHeight
-    } from '../../common';
+    import { getHeight } from '../../common';
 
     export default {
         data() {
@@ -49,9 +47,7 @@
             let curHeight = getHeight() - 60;
             this.height = "height:" + curHeight + "px";
         },
-        methods: {
-            
-        },
+        methods: {},
         components: {},
         computed: {}
     };

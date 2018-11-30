@@ -42,12 +42,10 @@ import ManageSearch from "./manageSearch.vue";
 import * as Types from '../../store/mutations-type';
 export default {
     data() {
-        return {
-            
-        };
+        return { };
     },
     created() {
-        this.$store.commit(Types.CLEAR_MANAGE_BOOKS)
+        this.$store.commit(Types.CLEAR_MANAGE_BOOKS);
     },
     methods: {
         types(type){
@@ -68,10 +66,10 @@ export default {
     watch: {},
     components: {
         ManageHeader,
-        ManageSearch
+        ManageSearch,
     },
     computed: {
-        books(){
+        books() {
             return this.$store.state.manageBooks;
         }
     }

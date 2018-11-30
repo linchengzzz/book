@@ -12,19 +12,19 @@
 </template>
 
 <script>
-     import * as Types from '../store/mutations-type'
+    import * as Types from '../store/mutations-type'
 
     export default {
-        props:['book'],
+        props: ['book'],
         data() {
             return {};
         },
         methods: {
             addCollect(book) {
-                this.$store.commit(Types.ADD_COLLECT, book)
+                this.$store.commit(Types.ADD_COLLECT, book);
             },
             addCar(book) {
-                this.$store.commit(Types.ADD_CAR, book)
+                this.$store.commit(Types.ADD_CAR, book);
             },
             isCollect(book) {
                 return this.$store.state.collectList.find(item => item.bookId === book.bookId)

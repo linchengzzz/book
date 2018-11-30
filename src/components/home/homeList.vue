@@ -40,6 +40,7 @@
 import { getBooks } from "../../api";
 import myButton from "../../base/button.vue";
 import { formatPrice } from "../../common";
+
 export default {
     props: {
         index: {
@@ -108,7 +109,6 @@ export default {
                         let newNextBookDate = reg.exec(next.bookDate)[0];
                         newPrevBookDate = newPrevBookDate.replace(/-/g, "");
                         newNextBookDate = newNextBookDate.replace(/-/g, "");
-                        // console.log(newPrevBookDate,newNextBookDate);
                         return this.flag * (newPrevBookDate - newNextBookDate);
                     });
                     break;

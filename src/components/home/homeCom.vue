@@ -29,12 +29,8 @@
 </template>
 
 <script>
-    import {
-        getBooks,
-    } from '../../api'
-    import {
-        formatPrice
-    } from "../../common";
+    import { getBooks } from '../../api'
+    import { formatPrice } from "../../common";
     import myButton from '../../base/button.vue';
 
     export default {

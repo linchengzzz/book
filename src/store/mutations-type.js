@@ -13,12 +13,12 @@ export const UPDATA_CAR = 'UPDATA_CAR';
 //移除选中
 export const DEL_SELECTED = 'DEL_SELECTED';
 //清除购物车
-export const CLEAR_CAR = 'CLEAR_CAR'
+export const CLEAR_CAR = 'CLEAR_CAR';
 //判断是否登录
-export const IS_LOGIN = 'IS_LOGIN'
+export const IS_LOGIN = 'IS_LOGIN';
 //管理图书--搜索图书
 export const GET_MANAGE_BOOKS = 'GET_MANAGE_BOOKS';
 //管理图书--清空图书
 export const CLEAR_MANAGE_BOOKS = 'CLEAR_MANAGE_BOOKS';
 //管理图书--删除图书
-export const DELETE_MANAGE_BOOK = 'DELETE_MANAGE_BOOK'
+export const DELETE_MANAGE_BOOK = 'DELETE_MANAGE_BOOK';

@@ -36,18 +36,18 @@
         </el-main>
     </div>
 </template>
+
 <script>
 import ManageHeader from "./manageHeader";
 import ManageSearch from "./manageSearch.vue";
 import * as Types from '../../store/mutations-type';
+
 export default {
     data() {
-        return {
-            
-        };
+        return {};
     },
     created() {
-        this.$store.commit(Types.CLEAR_MANAGE_BOOKS)
+        this.$store.commit(Types.CLEAR_MANAGE_BOOKS);
     },
     methods: {
         types(type){

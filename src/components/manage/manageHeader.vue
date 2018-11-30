@@ -5,30 +5,25 @@
         </el-header>
     </div>
 </template>
+
 <script>
     export default {
         data() {
-            return {
-            };
+            return { };
         },
-        created() {
-        },
-        methods: {
-        },
-        watch: {
-        },
-        components: {
-        },
-        computed: {
-        }
+        created() { },
+        methods: { },
+        watch: { },
+        components: { },
+        computed: { },
     };
 
 </script>
 
 <style scoped lang="less">
    .el-header {
-    background-color: #b3c0d1;
-    color: #333;
-    line-height: 60px;
+        background-color: #b3c0d1;
+        color: #333;
+        line-height: 60px;
 }
 </style>

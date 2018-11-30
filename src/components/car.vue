@@ -81,14 +81,10 @@
 </template>
 
 <script>
-    import {
-        getHeight,
-        formatPrice
-    } from '../common'
-    import {
-        mapState
-    } from 'vuex';
-    import * as Types from '../store/mutations-type'
+    import { getHeight, formatPrice } from '../common';
+    import { mapState } from 'vuex';
+    import * as Types from '../store/mutations-type';
+
     export default {
         data() {
             return {
@@ -96,7 +92,7 @@
                 data: [],
                 multipleSelection: [],
                 itemId: [],
-                DialogVisible:false
+                DialogVisible: false,
             };
         },
         created() {
@@ -124,7 +120,7 @@
                 this.$store.commit(Types.CLEAR_CAR)
             },
             payClick(){
-                if(this.multipleSelection.length>0){
+                if(this.multipleSelection.length > 0){
                     this.DialogVisible = true;
                 }
             },
@@ -157,7 +153,7 @@
                 } else {
                     return 0 + ' 元';
                 }
-            }
+            },
         }
     };
 

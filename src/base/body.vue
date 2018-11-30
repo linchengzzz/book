@@ -5,22 +5,13 @@
 </template>
 
 <script>
-
     export default {
         data() {
-            return {
-                
-             };
+            return {};
         },
-        methods: {
-            
-        },
-        components: {
-            
-        },
-        computed: {
-            
-        }
+        methods: {},
+        components: {},
+        computed: {}
     };
 </script>
 

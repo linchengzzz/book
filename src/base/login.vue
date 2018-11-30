@@ -32,7 +32,8 @@
 
 <script>
 import * as User from '../common/user';
-import * as Types from '../store/mutations-type'
+import * as Types from '../store/mutations-type';
+
 export default {
     data() {
         let validatePass = (rule, value, callback) => {
@@ -57,20 +58,20 @@ export default {
         submitForm() {
             let usrname = this.form.select;
             let password = this.form.pass;
-            if(usrname==='custom'){
-                window.localStorage.setItem(User.USERNAME,usrname);
-                window.location.hash='/home/com/sold'
-                this.$store.commit(Types.IS_LOGIN,true);
-            }else if(usrname==='admin'){
-                if(password==='0103'){
-                    window.localStorage.setItem(User.USERNAME,usrname);
-                    window.localStorage.setItem(User.PASSWORD,password);
-                    window.location.hash='/home/com/sold'
-                    this.$store.commit(Types.IS_LOGIN,true);
-                }else{
+            if (usrname === 'custom') {
+                window.localStorage.setItem(User.USERNAME, usrname);
+                window.location.hash = '/home/com/sold';
+                this.$store.commit(Types.IS_LOGIN, true);
+            } else if (usrname === 'admin') {
+                if (password === '0103') {
+                    window.localStorage.setItem(User.USERNAME, usrname);
+                    window.localStorage.setItem(User.PASSWORD, password);
+                    window.location.hash = '/home/com/sold';
+                    this.$store.commit(Types.IS_LOGIN, true);
+                } else {
                     this.$message('密码输入错误');
                 }
-            }else{
+            } else {
                 this.$message('请选择登录用户');
             }
         

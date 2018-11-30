@@ -27,14 +27,14 @@
         },
         methods: {
             logout(){
-                this.$store.commit(Types.IS_LOGIN,false);
+                this.$store.commit(Types.IS_LOGIN, false);
             }
         },
         components: {
             myNav
         },
         computed: {
-            username:function(){
+            username: function() {
                 let username = window.localStorage[User.USERNAME];
                 return username;
             }

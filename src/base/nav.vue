@@ -4,7 +4,7 @@
             <el-menu-item index="/home/com/sold">图书首页</el-menu-item>
             <el-menu-item index="/collect">我的收藏</el-menu-item>
             <el-menu-item index="/car">购物车</el-menu-item>
-            <!-- <el-menu-item index="/manage">图书管理</el-menu-item> -->
+            <el-menu-item index="/manage">图书管理</el-menu-item>
         </el-menu>
     </div>
 </template>

@@ -49,19 +49,15 @@
 </template>
 
 <script>
-    import {
-        getDetail
-    } from "../api";
-    import {
-        getHeight,
-        formatPrice
-    } from '../common';
-    import myButton from '../base/button.vue'
+    import { getDetail } from "../api";
+    import { getHeight, formatPrice } from '../common';
+    import myButton from '../base/button.vue';
+
     export default {
         data() {
             return {
                 book: {},
-                height: ''
+                height: '',
             };
         },
         methods: {
@@ -83,11 +79,9 @@
             this.height = "height:" + curHeight + "px";
         },
         components: {
-            myButton
+            myButton,
         },
-        computed: {
-
-        }
+        computed: { },
     };
 
 </script>
@@ -171,5 +165,4 @@
             }
         }
     }
-
 </style>

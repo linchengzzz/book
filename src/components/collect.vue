@@ -37,18 +37,14 @@
 </template>
 
 <script>
-    import {
-        getHeight,
-        formatPrice
-    } from '../common'
-    import {
-        mapState
-    } from 'vuex';
-    import * as Types from '../store/mutations-type'
+    import { getHeight, formatPrice } from '../common';
+    import { mapState } from 'vuex';
+    import * as Types from '../store/mutations-type';
+
     export default {
         data() {
             return {
-                height: ''
+                height: '',
             };
         },
         created() {
@@ -57,18 +53,16 @@
         },
         methods: {
             removeCollect(book){
-                this.$store.commit(Types.REMOVE_COLLECT,book)
+                this.$store.commit(Types.REMOVE_COLLECT, book);
             },
             format(value) {
                 return formatPrice(value);
             }
         },
-        components: {
-
-        },
+        components: { },
         computed: {
-            ...mapState(['collectList'])
-        }
+            ...mapState(['collectList']),
+        },
     };
 
 </script>
